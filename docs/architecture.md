@@ -1,4 +1,4 @@
-# Architecture: Local-video-server
+# Architecture: RTSPScout
 
 ## Технологический стек
 
@@ -38,7 +38,7 @@
 
 ```
 ┌─────────────────────────────────────────────────────────┐
-│                    Local-video-server                    │
+│                    RTSPScout                    │
 ├─────────────────────────────────────────────────────────┤
 │                                                          │
 │  ┌──────────────┐    ┌──────────────┐    ┌──────────┐ │
@@ -61,7 +61,7 @@
 ## Структура проекта
 
 ```
-Local-video-server/
+RTSPScout/
 ├── cmd/
 │   └── server/
 │       └── main.go                 # Точка входа приложения
@@ -197,7 +197,7 @@ Local-video-server/
 
 ### go.mod
 ```go
-module github.com/yourusername/local-video-server
+module github.com/yourusername/RTSPScout
 
 go 1.21
 
@@ -273,6 +273,7 @@ require (
 - Сканирование сети /24 (254 хоста): до 5 минут
 - Параллельная обработка: до 50 устройств одновременно
 - Потребление памяти: < 100 MB для типичной сети
+
 
 
 
