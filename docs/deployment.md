@@ -480,3 +480,4 @@ jobs:
 - **Issues:** [GitHub Issues](https://github.com/yourusername/local-video-server/issues)
 - **Документация:** [docs/](docs/)
 - **Email:** support@example.com
+
