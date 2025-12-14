@@ -1,0 +1,41 @@
+name: Go CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      # 1. Загрузка кода репозитория
+      - uses: actions/checkout@v4
+
+      # 2. Настройка среды Go
+      - name: Set up Go
+        uses: actions/setup-go@v4
+        with:
+          go-version: '1.21' # Укажите актуальную версию, используемую в проекте
+
+      # 3. Кэширование зависимостей модулей Go для ускорения сборок
+      - name: Cache Go modules
+        uses: actions/cache@v3
+        with:
+          path: ~/go/pkg/mod
+          key: ${{ runner.os }}-go-${{ hashFiles('**/go.sum') }}
+          restore-keys: |
+            ${{ runner.os }}-go-
+
+      # 4. Скачивание зависимостей
+      - name: Download dependencies
+        run: go mod download
+
+      # 5. Сборка приложения (проверка на ошибки компиляции)
+      - name: Build
+        run: go build -v ./...
+
+      # 6. Запуск модульных тестов (если они появятся в будущем)
+      - name: Test
+        run: go test ./...
