@@ -1,0 +1,70 @@
+# Конфигурация Local-video-server
+
+# Настройки сканирования
+scan:
+  # Подсеть для сканирования (пусто = автоматическое определение)
+  subnet: ""
+  
+  # Таймаут для сканирования порта (в секундах)
+  port_timeout: 2s
+  
+  # Таймаут для обнаружения устройств (в секундах)
+  discovery_timeout: 10s
+  
+  # Максимальное количество параллельных сканирований
+  max_concurrency: 50
+  
+  # Порты для сканирования
+  ports:
+    - 554   # RTSP
+    - 1935  # RTMP
+    - 80    # HTTP
+    - 8080  # HTTP альтернативный
+    - 8554  # RTSP альтернативный
+  
+  # Включить ONVIF Discovery
+  enable_onvif: true
+  
+  # Включить UPnP/SSDP Discovery
+  enable_upnp: true
+  
+  # Проверять RTSP потоки
+  check_rtsp: false
+
+# Настройки логирования
+log:
+  # Уровень логирования: debug, info, warn, error
+  level: info
+  
+  # Формат вывода: text, json
+  format: text
+  
+  # Путь к файлу логов (пусто = stdout)
+  file: ""
+
+# Настройки сети
+network:
+  # Автоматически определять подсеть
+  auto_detect_subnet: true
+  
+  # Интерфейс для сканирования (пусто = все интерфейсы)
+  interface: ""
+
+# Настройки RTSP
+rtsp:
+  # Таймаут для RTSP запросов (в секундах)
+  timeout: 5s
+  
+  # Использовать FFmpeg для проверки потоков
+  use_ffmpeg: true
+  
+  # Путь к FFmpeg (пусто = из PATH)
+  ffmpeg_path: ""
+  
+  # Стандартные пути RTSP потоков для проверки
+  default_paths:
+    - "/Streaming/Channels/101"
+    - "/Streaming/Channels/1"
+    - "/live/main_stream"
+    - "/live"
+    - "/cam/realmonitor"
