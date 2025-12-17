@@ -1,0 +1,6 @@
+FROM golang:1.21-alpine
+WORKDIR /app
+COPY . ./
+RUN go mod download || true
+CMD ["go", "run", "./cmd/vigilos-core"]
+

@@ -1,0 +1,5 @@
+FROM alpine:3.19
+WORKDIR /opt/vigilos
+COPY ../../../../bin/vigilos-core ./vigilos-core
+CMD ["./vigilos-core"]
+

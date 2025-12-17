@@ -1,0 +1,7 @@
+version: "3.9"
+services:
+  core:
+    build:
+      context: ../../..
+      dockerfile: infra/scripts/docker/dev/Dockerfile.dev
+

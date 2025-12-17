@@ -1,0 +1,60 @@
+# Go
+bin/
+dist/
+coverage.out
+*.test
+*.exe
+*.dll
+*.so
+*.dylib
+
+# Node / Web
+web/node_modules/
+web/.vite/
+web/dist/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-lock.yaml
+
+# Desktop (Qt/CMake)
+desktop/build*/
+desktop/.qmake.stash
+desktop/*.user
+*.pro.user
+*.DS_Store
+
+# Mobile (KMM/Android/iOS)
+mobile/android/.gradle/
+mobile/android/build/
+mobile/android/local.properties
+mobile/android/captures/
+mobile/android/.idea/
+mobile/ios/DerivedData/
+
+# C++/CMake
+analytics/build*/
+*.o
+*.obj
+*.pch
+*.pdb
+
+# Python tools
+__pycache__/
+*.pyc
+
+# Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs/exports
+logs/
+exports/
+
+# OS
+Thumbs.db
+.DS_Store
+

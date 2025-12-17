@@ -1,0 +1,13 @@
+//go:build cgo
+
+package bridge
+
+// #include <stdint.h>
+// static int dummy_bridge() { return 0; }
+import "C"
+
+// DummyCall shows CGO wiring placeholder.
+func DummyCall() int {
+	return int(C.dummy_bridge())
+}
+

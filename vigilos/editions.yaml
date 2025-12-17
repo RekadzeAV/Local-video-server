@@ -1,0 +1,21 @@
+# Edition configuration placeholder
+editions:
+  lite:
+    cameras: 2
+    database: sqlite
+  standard:
+    cameras: 8
+    database: postgres
+  full:
+    cameras: 24
+    database: postgres
+  expert:
+    cameras: 0   # 0 == unlimited
+    database: postgres
+  package:
+    cameras: 8
+    database: sqlite
+  regvid:
+    cameras: 32
+    database: postgres-timescaledb
+
