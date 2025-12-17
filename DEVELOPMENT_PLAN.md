@@ -1,4 +1,4 @@
-# План разработки Local-video-server
+# План разработки RTSPScout
 
 ## 1. Выбор технологического стека
 
@@ -24,7 +24,7 @@
 
 ```
 ┌─────────────────────────────────────────────────────────┐
-│                    Local-video-server                    │
+│                    RTSPScout                    │
 ├─────────────────────────────────────────────────────────┤
 │                                                          │
 │  ┌──────────────┐    ┌──────────────┐    ┌──────────┐ │
@@ -98,7 +98,7 @@
 ## 3. Структура проекта
 
 ```
-Local-video-server/
+RTSPScout/
 ├── cmd/
 │   └── server/
 │       └── main.go                 # Точка входа приложения
@@ -574,7 +574,7 @@ type RTSPStreamInfo struct {
 ## 6. Зависимости (go.mod)
 
 ```go
-module github.com/yourusername/local-video-server
+module github.com/yourusername/RTSPScout
 
 go 1.21
 
@@ -609,10 +609,10 @@ require (
 **Запуск GUI приложения:**
 ```bash
 # Запуск графического интерфейса (по умолчанию)
-./local-video-server
+./RTSPScout
 
 # Или явно указать GUI режим
-./local-video-server gui
+./RTSPScout gui
 ```
 
 **Возможности GUI:**
@@ -627,22 +627,22 @@ require (
 
 ```bash
 # Сканирование всей локальной сети
-./local-video-server scan
+./RTSPScout scan
 
 # Сканирование конкретной подсети
-./local-video-server scan --subnet 192.168.1.0/24
+./RTSPScout scan --subnet 192.168.1.0/24
 
 # Сканирование с проверкой RTSP
-./local-video-server scan --check-rtsp
+./RTSPScout scan --check-rtsp
 
 # Экспорт результатов
-./local-video-server scan --export json --output results.json
+./RTSPScout scan --export json --output results.json
 
 # Детальный вывод
-./local-video-server scan --verbose
+./RTSPScout scan --verbose
 
 # Использование конфигурационного файла
-./local-video-server scan --config config.yaml
+./RTSPScout scan --config config.yaml
 ```
 
 ### Пример вывода:
